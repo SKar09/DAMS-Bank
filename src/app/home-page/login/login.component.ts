@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +9,14 @@ import { Route, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private router:Router) { }
-
+  userName!:any;
   ngOnInit(): void {
   }
 
-  gotoDashboard(){
-    this.router.navigate(["./../dashboard"])
+  gotoDashboard(loginForm){
+    this.userName=loginForm.UserName;
+    console.log(loginForm);
+    sessionStorage.setItem("userName", this.userName);
+    this.router.navigate(["dashboard"]);
   }
 }

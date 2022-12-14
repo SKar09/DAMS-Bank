@@ -19,7 +19,7 @@
   <body>
     <h2 class="d-flex justify-content-center" style="margin-bottom: 50px;">Login to your Account</h2>
     <div class="col-sm-12 d-flex justify-content-center">
-        <form style="width: 60%;">
+        <form #loginForm="ngForm" style="width: 60%;" (ngSubmit)="gotoDashboard(loginForm.value)">
             
             <div class="form-group row" style="margin-bottom: 50px;">
 
@@ -27,7 +27,7 @@
     
                 <div class="col-sm-6">
     
-                    <input type="text" class="form-control" id="inputUsername3"  >
+                    <input type="text" class="form-control" name="UserName" required ngModel >
     
                 </div>
     
@@ -38,7 +38,7 @@
     
                 <div class="col-sm-6">
     
-                    <input type="password" class="form-control" id="inputPassword3"  >
+                    <input type="password" class="form-control" id="inputPassword3"  required>
     
                 </div>
     
@@ -48,7 +48,7 @@
 
                 <div class="col-sm-12 d-flex justify-content-center">
       
-                  <button type="submit" class="btn btn-primary" (click)="gotoDashboard()">Login</button>
+                  <button type="submit" class="btn btn-primary">Login</button>
       
                 </div>
       

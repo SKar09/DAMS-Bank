@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   title = 'DAMS-Bank';
   constructor(private router: Router) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    //throw new Error('Method not implemented.');
   }
 
   gotoHome(){

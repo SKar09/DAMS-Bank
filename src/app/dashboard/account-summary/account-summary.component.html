@@ -8,14 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Session Expired</title>
-    
+    <title>Account Summary</title>
     <style>
-        form {
-          margin: 60px;
-        }
 
-    .heading{
+        .heading{
         text-align: center;
         font-weight: bold;
         font-size: x-large;
@@ -23,93 +19,66 @@
         padding: 20px;
         position:sticky;
         top: 20px;
-        margin-top: 80px;
-    }
+        }
 
-    input[type=text], select, [type=date], [type=number] {
+        .row{
+            padding: 10px;
+            
+            margin: 10px;
 
-width: 100%;
+            position: relative;
 
-padding: 12px;
-
-border: 1px solid #ccc;
-
-border-radius: 4px;
-
-resize: vertical;
-
-}
-
-label {
-
-padding: 12px 12px 12px 0;
-
-display: inline-block;
-
-}
-
-.col-50 {
-
-float: left;
-
-width: 50%;
-
-margin-top: 6px;
-
-}
-
-.row:after {
-
-content: "";
-
-display: table;
-
-clear: both;
-
-}
-
-@media screen and (max-width: 600px) {
-
-.col-50, .col-50, input[type=submit] {
-
-width: 100%;
-
-margin-top: 0;
-
-}    
-}   
-    
+            margin-left: 530px;
+        }
     </style>
   </head>
   <body>
- 
+    <!-- Image and text -->
+<!-- <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://cdn.vectorstock.com/i/1000x1000/66/62/letter-b-vector-32696662.webp" width="30" height="30" class="d-inline-block align-top" alt="">
+    DAMS Bank
+  </a>
+</nav> -->
 
-<div class="heading">You have been logged out!</div>
+<div class="heading">Account Summary</div>
 
 <br>
-<form>
+
 <div class="row">
     <div class="col-50">
-        <label>Session Expired.</label>
+        <label>Username : &nbsp;&nbsp;</label>
     </div>
-    <div class="col-25">
-        <label>Last logged in</label>
-        <input type="text">
+    <div class="col-50">
+        <p>userABC</p>
     </div>
 </div>
 <div class="row">
     <div class="col-50">
-        <label>Suggestions-</label>
-        <br>
-        <label>For security reasons we have disabled back button</label>
+        <label>Account Number : &nbsp;&nbsp;</label>
+    </div>
+    <div class="col-50">
+        <p>41109725272</p>
     </div>
 </div>
 <div class="row">
-    <div class="col-50">
-        <a href="#">Click here to go login page</a>
-    </div>
+<div class="col-50">
+    <label>Account Balance : &nbsp;&nbsp;</label>
 </div>
-</form>
+<div class="col-50">
+    <p>1,84795</p>
+</div>
+</div>
+<div class="row">
+    <div class="col-50">
+        <label>Account Type : &nbsp;&nbsp;</label>
+    </div>
+    <div class="col-50">
+        <p>Savings Account</p>
+    </div>
+    </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

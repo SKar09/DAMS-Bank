@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -20,6 +20,11 @@ import { ForgotUIDComponent } from './home-page/login/forgot-uid/forgot-uid.comp
 import { ForgotPasswordComponent } from './home-page/login/forgot-password/forgot-password.component';
 import { RegisterComponent } from './home-page/register/register.component';
 import { OpenAnAccountComponent } from './home-page/open-an-account/open-an-account.component';
+import { AccountSummaryComponent } from './dashboard/account-summary/account-summary.component';
+import { AccountDetailsComponent } from './dashboard/account-details/account-details.component';
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './auth.guard';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,13 +45,18 @@ import { OpenAnAccountComponent } from './home-page/open-an-account/open-an-acco
     ForgotUIDComponent,
     ForgotPasswordComponent,
     RegisterComponent,
-    OpenAnAccountComponent
+    OpenAnAccountComponent,
+    AccountSummaryComponent,
+    AccountDetailsComponent,
+    AdminComponent,
   ],
   imports: [
+    RouterModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

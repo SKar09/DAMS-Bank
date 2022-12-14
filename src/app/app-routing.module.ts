@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './auth.guard';
+import { AccountDetailsComponent } from './dashboard/account-details/account-details.component';
 import { AccountStatementComponent } from './dashboard/account-statement/account-statement.component';
+import { AccountSummaryComponent } from './dashboard/account-summary/account-summary.component';
 import { ChangeUserIdPasswordComponent } from './dashboard/change-user-id-password/change-user-id-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddPayeeComponent } from './dashboard/fund-transfer/add-payee/add-payee.component';
@@ -13,6 +17,7 @@ import { SessionExpiredComponent } from './dashboard/session-expired/session-exp
 import { UserProfileComponent } from './dashboard/user-profile/user-profile.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ForgotPasswordComponent } from './home-page/login/forgot-password/forgot-password.component';
+import { SetPasswordComponent } from './home-page/login/forgot-password/set-password/set-password.component';
 import { ForgotUIDComponent } from './home-page/login/forgot-uid/forgot-uid.component';
 import { LoginComponent } from './home-page/login/login.component';
 import { OpenAnAccountComponent } from './home-page/open-an-account/open-an-account.component';
@@ -26,7 +31,12 @@ const routes: Routes = [
         path: 'login', component: LoginComponent, 
         children:[
           {path:'forgotUID', component:ForgotUIDComponent},
-          {path:'forgotPassword', component:ForgotPasswordComponent}
+          {
+            path:'forgotPassword', component:ForgotPasswordComponent,
+            children:[
+              {path:'setPassword', component:SetPasswordComponent}
+            ]
+          }
         ]
       },
       {
@@ -52,9 +62,14 @@ const routes: Routes = [
       },
       {path:'changeUserIdPassword', component:ChangeUserIdPasswordComponent},
       {path: 'accountStatement', component: AccountStatementComponent},
+      {path: 'accountSummary', component: AccountSummaryComponent},
+      {path: 'accountDetails', component: AccountDetailsComponent},
       {path:'sessionExpired', component:SessionExpiredComponent},
       {path:'userProfile', component:UserProfileComponent},
-    ]
+    ], canActivate:[AuthGuard]
+  },
+  {
+    path:'admin', component:AdminComponent
   }
 ];
 

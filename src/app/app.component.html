@@ -10,16 +10,24 @@
 
     <title>Dashborad</title>
     <style>
+    
+    
+    /* #intro {
+        background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
+        height: 100vh;
+      } */
+
+
       .wrapper .sidebar{
-    background: azure;
-    position: fixed;
-    top: 50px;
-    left: 0;
-    width: 225px;
-    height: 100%;
-    padding: 20px 0;
-    transition: all 0.5s ease;
-}
+        background: azure;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 225px;
+        height: 100%;
+        padding: 20px 0;
+        transition: all 0.5s ease;
+      }
   #sidebar{
     list-style-type: none;
     padding: 14px;
@@ -50,35 +58,44 @@
   background: #ddd;
   color: black;
 }
-    </style>
+  </style>
   </head>
   <body>
     <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <img src="https://cdn.vectorstock.com/i/1000x1000/66/62/letter-b-vector-32696662.webp" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="https://raw.githubusercontent.com/adpandey457/DAMS-Bank/main/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
     DAMS Bank
+  </a>
+  <a class="navbar-brand" routerLink="dashboard/sessionExpired">
+    <img src="https://raw.githubusercontent.com/adpandey457/DAMS-Bank/main/logout.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Logout
   </a>
 </nav>
 
-
 <div class="newnavbar nav justify-content-center">
-    
-  <a [routerLink]='["homePage"]'>Home</a>
-  <a routerLink="dashboard">News</a>
+  <a routerLink="homePage">Home</a>
+  <a href="#">News</a>
   <a href="#">Stock Status</a>
   <a href="#">New Offers</a>
-  <a href="#">Deals</a>
+  <a href="#">Help</a>
 </div>
 
-
+ <!-- Background image -->
+ <!-- <div id="intro" class="bg-image shadow-2-strong">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+  </div>
+</div> -->
+<!-- Background image -->
     
-<router-outlet></router-outlet>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+    <router-outlet></router-outlet>
   </body>
 </html>
